@@ -15,7 +15,7 @@
 
 
 
-body::after {
+xxbody::after {
     position: absolute;
     content: "";
     top: 0;
@@ -37,7 +37,7 @@ body::after {
 
 }
 
-body>* {
+xxbody>* {
     opacity: 0.35;
 }
 
@@ -68,16 +68,20 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    width:100%;
 
 
 }
 
 .container {
     max-width: 730px;
-    display: flex;
+      display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    background-color: white;
+    margin:0 5%;
+    
 }
 
 .mainpic {
@@ -86,16 +90,18 @@ body {
     background-image: url("./images/drawers.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    flex: 1 1 39%;
+    flex: 1 0 39%;
 }
 
 article {
-    flex: 1 1 61%;
-    height: 34.375vh;
+   
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 5%;
+   background-color: white;
+    margin-left:.45rem;
+  
 }
 
 .header {
@@ -103,20 +109,24 @@ article {
     font-size: 1.6rem;
     width: 95%;
     line-height: 130%;
+    margin-top: -.45rem;
+    letter-spacing: -0.2px;
+    opacity:.8;
 }
 
 p {
-    margin-top: .6rem;
+    margin-top: 1rem;
+opacity:.5;
 
 }
 
 .credits {
-
+margin-top:2rem;
     width: 100%;
-    border: 1px blue dotted;
-    display: flex;
+     display: flex;
     flex-direction: row;
     position: relative;
+user-select: none;
 }
 
 .picture {
@@ -134,6 +144,8 @@ p {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    margin-left:1rem;
+    opacity:.6;
 }
 
 .nameanddate div:nth-child(1) {
@@ -142,6 +154,7 @@ p {
 
 .nameanddate div:nth-child(2) {
     font-weight: 600;
+    opacity:.5;
 }
 
 .sharebutton {
@@ -154,11 +167,12 @@ p {
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
+  
 }
 
 .sharebutton:hover,
 .sharebutton:focus {
-    filter: brightness(20%);
+    filter: brightness(120%);
 }
 
 .socialmedia {
@@ -177,6 +191,9 @@ p {
     align-items: center;
     border-radius: 10px;
     transition: opacity .3s ease-in-out;
+}
+.socialmedia div:hover{
+    opacity:.5;
 }
 
 .socialmedia div {
@@ -212,37 +229,93 @@ p {
 }
 
 
-.socialmedia div:nth-child(5) {
+.socialmedia label {
     display: none;
     filter: brightness(2);
     background-image: url("/images/icon-share.svg");
+    width:2rem;
+    height:2rem;
+    background-size:contain;
+    margin-left:auto;
+    margin-right:5px;
 }
 
 .socialmedia div:nth-child(6) {
     position: absolute;
-
-    left: 50%;
+    left: 45%;
     align-self: flex-end;
     transform: translateY(50%) rotate(45deg);
     z-index: 4;
-    content: "hello";
+    content: "";
     background-color: var(--edges);
 }
 
+.socialmedia div:nth-child(6):hover {
+    opacity: 1;
+}
+
+#checkbox{
+    display:none;
+}
 
 
 @media (max-width:800px) {
 
-    body {
-        background-color: green;
+    .socialmedia {
+      
+    
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        justify-content: flex-start;;
+
     }
+
+
+    .socialmedia label {
+        display: block;
+       
+    }
+    .socialmedia div:nth-child(6) {
+        display:none;
+    }
+
+    .socialmedia div:nth-child(1) {
+        display:none;
+    }
+  
 }
 
 
 
-@media (max-width:400px) {
+@media (max-width:580px) {
 
     body {
-        background-color: blue;
+        justify-content:flex-start;
+        height:auto;
+        
+
+
     }
+
+.container{
+    flex-direction: column;
+    justify-content: flex-start;
+    height:100vh;
+    
+}
+.mainpic{
+
+
+    width:100%;
+    flex:1;
+    
+}
+.header{
+  height:30rem;
+  flex:1;
+  text-align:center;
+}
+
 }
