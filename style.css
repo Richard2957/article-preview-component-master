@@ -177,7 +177,7 @@ user-select: none;
 
 .socialmedia {
     position: absolute;
-
+opacity:0;
     height: 120%;
     top: -60px;
     left: 60%;
